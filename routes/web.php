@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
+
+Route::resource('products', 'ProductController')->only('index', 'store', 'update', 'destroy');
+Route::resource('suppliers', 'SupplierController')->only('index', 'store', 'update', 'destroy');
