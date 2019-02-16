@@ -19,5 +19,8 @@ return [
     'email' => 'Email',
     'city' => 'Kota',
     'age' => 'Umur',
-
+    'supplier' => 'Supplier',
+    'price' => 'Harga Jual',
+    'status' => 'Status',
+    'image' => 'Gambar',
 ];

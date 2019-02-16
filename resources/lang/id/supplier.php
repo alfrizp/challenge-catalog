@@ -6,7 +6,7 @@ return [
     'title_h2' => 'Data Supplier',
     'add_supplier' => 'Tambah Supplier',
     'edit_supplier' => 'Edit Supplier',
-    'delete_supplier' => 'Edit Supplier',
+    'delete_supplier' => 'Hapus Supplier',
     'name_placeholder' => 'Nama Supplier',
     'email_placeholder' => 'Email Supplier',
     'city_label' => 'Kota Asal',
