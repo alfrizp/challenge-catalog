@@ -42,7 +42,7 @@
                                 __('app.edit'),
                                 ['action' => 'edit', 'id' => $supplier->id],
                                 [
-                                    'id' => 'edit-category-'.$supplier->id,
+                                    'id' => 'edit-supplier-'.$supplier->id,
                                     'class' => 'btn btn-primary',
                                 ]
                             ) }}
@@ -50,7 +50,7 @@
                                 'suppliers.index',
                                 __('app.delete'),
                                 ['action' => 'delete', 'id' => $supplier->id],
-                                ['id' => 'del-category-'.$supplier->id, 'class' => 'btn btn-danger']
+                                ['id' => 'del-supplier-'.$supplier->id, 'class' => 'btn btn-danger']
                             ) !!}
                         </td>
                     </tr>
