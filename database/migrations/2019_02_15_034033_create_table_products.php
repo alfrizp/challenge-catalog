@@ -21,6 +21,7 @@ class CreateTableProducts extends Migration
             $table->unsignedInteger('supplier_id');
             $table->string('image_file');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
