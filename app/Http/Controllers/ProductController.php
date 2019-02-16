@@ -12,15 +12,16 @@ use App\Http\Requests\Products\UpdateRequest;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('retrieve.product')->only('index');
+    }
+
     public function index()
     {
-        $selectedProduct = null;
+        $selectedProduct = request()->selectedProduct;
         $products = Product::orderBy('updated_at', 'desc')->paginate(10);
         $suppliers = Supplier::all()->pluck('name', 'id');
-
-        if (in_array(request('action'), ['edit', 'delete']) && request('id') != null) {
-            $selectedProduct = Product::findOrFail(request('id'));
-        }
 
         return view('products.index', compact('selectedProduct', 'products', 'suppliers'));
     }

@@ -10,16 +10,18 @@ use App\Http\Requests\Suppliers\UpdateRequest;
 
 class SupplierController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('retrieve.supplier')->only('index');
+    }
+
     public function index()
     {
-        $selectedSupplier = null;
+        $selectedSupplier = request()->selectedSupplier;
         $suppliers = Supplier::orderBy('updated_at', 'desc')->paginate(10);
+
         $cities = City::all()->pluck('title', 'id');
         $years = get_year_range(1945, 2018);
-
-        if (in_array(request('action'), ['edit', 'delete']) && request('id') != null) {
-            $selectedSupplier = Supplier::findOrFail(request('id'));
-        }
 
         return view('suppliers.index', compact('selectedSupplier', 'suppliers', 'cities', 'years'));
     }

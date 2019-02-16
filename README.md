@@ -17,8 +17,9 @@ Untuk demo aplikasi silahkan kunjungi:
 6. Buat database MySQL baru untuk aplikasi  
 (dengan perintah: `$ mysqladmin -urootuser -p create challenge-catalog`)
 7. Setting credentials database dan url di file `.env`
-8. `$ php artisan migrate --seed`
-9. `$ php artisan serve`
+8. `$ php artisan storage:link`
+9. `$ php artisan migrate --seed`
+10. `$ php artisan serve`
 
 ### Automated Testing
 Projek ini dilengkapi dengan automated testing.
