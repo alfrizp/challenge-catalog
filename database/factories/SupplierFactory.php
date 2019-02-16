@@ -11,7 +11,7 @@ $factory->define(Supplier::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'city_id' => $allCity[$faker->numberBetween(0, $cityCount)]->id,
+        'city_id' => $allCity[$faker->numberBetween(0, $cityCount - 1)]->id,
         'birth_year' => $faker->numberBetween(1945, 2018),
     ];
 });
