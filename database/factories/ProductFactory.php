@@ -1,12 +1,13 @@
 <?php
 
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
 
 use App\Models\Product;
 use App\Models\Supplier;
 
-function getAllDummyImage()
-{
+$factory->define(Product::class, function (Faker $faker) {
     $imgDir = __DIR__. '/../seeds/images/';
     $imgNameList = array_diff(scandir($imgDir), ['..', '.']);
     $imgFiles = [];
@@ -15,11 +16,6 @@ function getAllDummyImage()
         $imgFiles[] = $imgDir . $imgName;
     }
 
-    return $imgFiles;
-}
-
-$factory->define(Product::class, function (Faker $faker) {
-    $imgFiles = getAllDummyImage();
     $imgFilesIdx = rand(0, count($imgFiles) - 1);
     $imagePath = $imgFiles[$imgFilesIdx];
 
