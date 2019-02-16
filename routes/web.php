@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    $products = App\Models\Product::orderBy('updated_at', 'desc')->paginate(9);
+
+    return view('home', compact('products'));
 })->name('home');
 
 Route::resource('products', 'ProductController')->only('index', 'store', 'update', 'destroy');
