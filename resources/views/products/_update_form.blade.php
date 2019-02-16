@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    {!! Form::submit(__('product.save'), ['class' => 'btn btn-primary']) !!}
+                    {!! Form::submit(__('product.edit'), ['class' => 'btn btn-primary']) !!}
                     {{ link_to_route('products.index', __('product.cancel'), [], ['class' => 'btn btn-secondary']) }}
                 </div>
                 {{ Form::close() }}
