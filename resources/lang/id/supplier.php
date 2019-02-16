@@ -18,11 +18,12 @@ return [
     'save' => 'Simpan',
     'cancel' => 'Batal',
     'edit' => 'Edit',
-    'delete_confirm' => 'Anda yakin ingin menghapus?',
+    'delete_confirm' => 'Menghapus supplier juga akan menghapus semua produk yang dimiliki oleh supplier terseut. Anda yakin ingin menghapus?',
     'delete_confirm_btn' => 'Ya!',
     'created' => 'Berhasil menambahkan data Supplier baru',
     'updated' => 'Berhasil mengedit data Supplier',
     'deleted' => 'Berhasil menghapus data Supplier',
+    'undeleted' => 'Supplier memiliki produk. Gagal menghapus data Supplier',
 
     // Attributes
     'name' => 'Nama',

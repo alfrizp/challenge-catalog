@@ -44,6 +44,11 @@ class SupplierController extends Controller
 
     public function destroy(Supplier $supplier)
     {
+        // Delete associate product
+        $supplier->products()->get()->each(function($product) {
+            $product->delete();
+        });
+
         $supplier->delete();
 
         flash(__('supplier.deleted'), 'success');
