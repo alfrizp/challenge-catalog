@@ -14,10 +14,10 @@ class CityTest extends TestCase
     /** @test */
     public function a_city_has_title_attribute()
     {
-        $category = factory(City::class)->create([
+        $city = factory(City::class)->create([
             'name' => 'KABUPATEN KLATEN'
         ]);
 
-        $this->assertEquals('Kabupaten Klaten', $category->title);
+        $this->assertEquals('Kabupaten Klaten', $city->title);
     }
 }
